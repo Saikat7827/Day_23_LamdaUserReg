@@ -40,6 +40,11 @@ public class UserRegistration {
 		};
 		System.out.println(isValidPassword2.validate("^[a-z](?=.*[A-Z]).{8,}$", "Saikateee"));
 		
+		Validation isValidPassword3 = (pattern, password) -> {
+			return "Password rule 3 is " + Pattern.compile(pattern).matcher(password).matches();
+		};
+		System.out.println(isValidPassword3.validate("^[a-z](?=.*[A-Z]+)(?=.*[0-9]+).{8,}$", "saikat1998"));
+		
 	}
 	
 }
