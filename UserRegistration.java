@@ -25,6 +25,16 @@ public class UserRegistration {
 		};
 		System.out.println(isValidEmail.validate("^[a-z]+[+-_.]*[a-z]*[@][a-z]+[.][a-z]{2,4}[.]*([a-z]{2})*$",
 				"Saikatchakraborty@gmail.com"));
+
+		Validation isValidMobileNumber = (pattern, mobileNumber) -> {
+			return "Mobile number is " + Pattern.compile(pattern).matcher(mobileNumber).matches();
+		};
+		System.out.println(isValidMobileNumber.validate("^[91]+[ ]?[6-9]{1}[0-9]{9}$", "91 8348497011"));
+
+		Validation isValidPassword1 = (pattern, password) -> {
+			return "Password is " + Pattern.compile(pattern).matcher(password).matches();
+		};
+		System.out.println(isValidPassword1.validate("^[a-z]{8,}$", "Saikatee"));
 	}
 	
 }
