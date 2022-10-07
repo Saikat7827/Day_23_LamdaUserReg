@@ -45,6 +45,11 @@ public class UserRegistration {
 		};
 		System.out.println(isValidPassword3.validate("^[a-z](?=.*[A-Z]+)(?=.*[0-9]+).{8,}$", "saikat1998"));
 		
+		Validation isValidPassword4 = (pattern, password) -> {
+			return "Password rule 4 is " + Pattern.compile(pattern).matcher(password).matches();
+		};
+		System.out.println(isValidPassword4.validate("^[0-9a-zA-Z!,@#$&*().]{8,}$", "saikat1234"));
+		
 	}
 	
 }
